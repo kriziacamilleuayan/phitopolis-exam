@@ -11,10 +11,12 @@ h1{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 1rem;
 }
 
 input {
-  width: 30rem;
+  max-width: 30rem;
+  min-width: 20rem;
   height: 3rem;
   font-size: 18px;
   border: #fffdd0 5px dotted;
