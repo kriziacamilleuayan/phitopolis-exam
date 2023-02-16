@@ -55,9 +55,7 @@ function App() {
     const res = data
       .split(",")
       .map((x) => {
-        if (x === "") return; // remove extra comma
-        if (isNaN(Number(x))) return; // remove nan
-        if (x > 1000 || x < -1000) return;
+        if (x === "" || isNaN(Number(x)) || x > 1000 || x < -1000) return; // remove extra comma, remove nan
         return Number(x);
       })
       .filter((n) => n !== undefined); // remove all undefined
@@ -69,7 +67,7 @@ function App() {
       return;
     }
 
-    return calculate(res);
+    return calculate(res.sort((a, b) => a - b));
   };
 
   const calculate = (arr) => {
